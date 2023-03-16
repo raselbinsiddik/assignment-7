@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              common: ["Rubik", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body>
+    <div class="mt-6 ml-3 text-lg bg-yellow-100">
+        <h2 class="bg-lime-400">Question1: what is difference between map, filter, forEach and find ? </h2>
+        <h4>Answer1: <li>
+            map is return elements or value in an array.
+        </li>
+        <li>filter return all the value in a condition ways.</li>
+        <li>find return only first value in a condition ways.</li>
+        <li>It does not create a new array.</li>
+    </h4>
+    </div>
+    <div class="mt-6 ml-3 text-lg bg-yellow-100">
+        <h2 class="bg-lime-400">Question2:what is difference between local storage session storage and cookies </h2>Answer2:
+            <li>local storage every time save our data.when we close tab it also save our data.
+            </li>
+            <li>but session storage save our data just one time.</li>
+            <li>cookies are used primarily for tracking user behavior and implementing features such as user authentication. </li>
+    </div>
+    <div class="mt-6 ml-3 text-lg bg-yellow-100">
+        <h2 class="bg-lime-400">Question3: how does work event loop?</h2>Answer3:
+        <li>The event loop constantly checks the event queue for new events. If there is an event in the queue, the event loop takes it out of the queue and executes any associated callback functions.</li>
+    </div>
+    <div class="mt-6 ml-3 text-lg bg-yellow-100">
+        <h2  class="bg-lime-400">Question4:what is the work quizTimer? </h2>Answer4:
+        <p>quizTimer work are in the time maintain. its crate to help setInterval and clearInterval.in this function are maintain time.</p>
+    </div>
+    <div>
+        <h2>what is the work chooseQuiz?</h2>
+        <p>Answer4: chooseQuiz its a function name. its create to use in our js function.its maintain question options. when we click any options its maintain correct answer.</p>
+    </div>
+    
+</body>
+</html>

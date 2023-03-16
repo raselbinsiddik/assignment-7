@@ -53,14 +53,12 @@ const loadQuiz = async () => {
 
 // Displaying quiz on quiz page
 const displayQuiz = (data, i) => {
-  
   if (!data) {
     quizContainer.innerHTML = "";
     return;
   }
 
   data.forEach((quiz, i) => {
-       console.log(quiz);
     quizContainer.innerHTML += `
     <div class="m-3 py-3 px-4 shadow-sm rounded">
   <div class="flex items-center">
@@ -69,7 +67,7 @@ const displayQuiz = (data, i) => {
     </div>
     <p class="text-gray-800 text-sm">${quiz.question}</p>
   </div>
-  <div onclick="chooseQuiz(index, givenAns)"   class="grid grid-cols-2 gap-4 mt-5">
+  <div class="grid grid-cols-2 gap-4 mt-5">
   ${displayQuizOptions(quiz.options, i)}
   </div>
 </div>`;

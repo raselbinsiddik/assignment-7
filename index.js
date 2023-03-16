@@ -194,6 +194,5 @@ document.querySelector("#submit").addEventListener("click", ()=> {
 });
 
 const blog = () => {
-  const blog = document.getElementById('blog');
   window.location.href = 'blog.html';
 }

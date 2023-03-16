@@ -9,8 +9,8 @@ let startQuiz = document.querySelector("#startQuiz");
 let rulesContainer = document.querySelector("#rulesContainer");
 let alertContainer = document.querySelector("#alertContainer");
 let submitContainer = document.querySelector("#submitContainer");
-let quizContainer = document.getElementById("quizContainer");
-let answersContainer = document.querySelector("#answersContainer");
+let quizContainer = document.querySelector("#quizContainer");
+let answersContainer = document.getElementById("answersContainer");
 let displayResult = document.querySelector("#displayResult");
 
 // EventListener for quiz start button
@@ -47,22 +47,20 @@ startQuiz.addEventListener("click", () => {
 const loadQuiz = async () => {
   const res = await fetch("./data/quiz.json");
   const data = await res.json();
- // quizData = data;
-  console.log(data);
+  quizData = data;
   displayQuiz(data);
 };
 
 // Displaying quiz on quiz page
 const displayQuiz = (data, i) => {
-  //console.log(data);
   
   if (!data) {
     quizContainer.innerHTML = "";
     return;
   }
 
-    data.forEach((quiz, i) => {
-      console.log(quiz);
+  data.forEach((quiz, i) => {
+       console.log(quiz);
     quizContainer.innerHTML += `
     <div class="m-3 py-3 px-4 shadow-sm rounded">
   <div class="flex items-center">
@@ -71,17 +69,19 @@ const displayQuiz = (data, i) => {
     </div>
     <p class="text-gray-800 text-sm">${quiz.question}</p>
   </div>
-  <div class="grid grid-cols-2 gap-4 mt-5">
-    ${displayQuizOptions(quiz.options, i)}
+  <div onclick="chooseQuiz(index, givenAns)"   class="grid grid-cols-2 gap-4 mt-5">
+  ${displayQuizOptions(quiz.options, i)}
   </div>
 </div>`;
-   
+    displayAnswers(answers);
+    
   });
   
 };
 
 // EventListener for quiz submit button
-document.querySelector("#submit").addEventlistener("click", () => {
+document.querySelector("#submit").addEventListener("click", ()=> {
+ 
   if (answers.length < 6) {
     return;
   }
@@ -90,6 +90,7 @@ document.querySelector("#submit").addEventlistener("click", () => {
   <i class="fa-solid fa-fan animate-spin text-2xl text-green-600"></i>
   <p class="text-xs animate-pulse">Please Wait, We are checking...</p>
 </div>`;
+  showAnswers(answers);
   let timeTaken = document.querySelector("#count");
   let totalMark = 0;
   let grade = {
@@ -144,6 +145,7 @@ document.querySelector("#submit").addEventlistener("click", () => {
   // Right side bar/ answer section
   let x = setTimeout(() => {
     showAnswers(answers);
+    
     displayResult.innerHTML = `<div
     class="h-[220px] w-[220px] mx-auto mt-8 flex flex-col justify-center border-2 rounded-tr-[50%] rounded-bl-[50%]"
   >

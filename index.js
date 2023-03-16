@@ -71,7 +71,7 @@ const displayQuiz = (data, i) => {
   ${displayQuizOptions(quiz.options, i)}
   </div>
 </div>`;
-    displayAnswers(answers);
+  
     
   });
   
